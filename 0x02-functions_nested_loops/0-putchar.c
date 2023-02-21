@@ -1,6 +1,11 @@
 #include "main.h"
-/* a program that prints _putchar, followed by a new line.*/
-int main (void)
+
+/**
+ * main - Entry point
+ * Return:0
+ */
+
+int main(void)
 {
 char c[9] = "_putchar";
 int i = 0;
@@ -11,5 +16,5 @@ i++;
 }
 _putchar('\n');
 return (0);
-
 }
+
