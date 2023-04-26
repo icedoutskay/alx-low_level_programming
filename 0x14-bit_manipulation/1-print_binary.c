@@ -1,17 +1,23 @@
 /**
- * get_bit - Returns the value of a bit at a given index.
+ * print_binary - Prints the binary representation of a number.
  *
- * @n: The number to get the bit from.
- * @index: The index of the bit to get, starting from 0.
- *
- * Return: The value of the bit at the given index, or -1 if an
- *         error occurred.
+ * @n: The number to print in binary.
  */
-int get_bit(unsigned long int n, unsigned int index)
+void print_binary(unsigned long int n)
 {
-	if (index >= (sizeof(unsigned long int) * 8))
-		return (-1);
+	unsigned long int mask = 1;
+	int i;
 
-	return ((n >> index) & 1);
+	mask <<= (sizeof(unsigned long int) * 8) - 1;
+
+	for (i = 0; i < (int)(sizeof(unsigned long int) * 8); i++)
+	{
+		if ((n & mask) == 0)
+			_putchar('0');
+		else
+			_putchar('1');
+		mask >>= 1;
+	}
+
 }
 
